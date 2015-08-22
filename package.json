@@ -1,0 +1,53 @@
+{
+  "name": "bitcoind-rpc-client",
+  "version": "0.1.0",
+  "description": "Bitcoind RPC client",
+  "keywords": [
+    "bitcoin",
+    "bitcoind",
+    "rpc"
+  ],
+  "bugs": {
+    "url": "https://github.com/fanatid/bitcoind-rpc-client/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Kirill Fomichev",
+    "email": "fanatid@ya.ru"
+  },
+  "files": [
+    "lib",
+    "src",
+    "LICENSE",
+    "README.md"
+  ],
+  "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fanatid/bitcoind-rpc-client"
+  },
+  "scripts": {
+    "prepublish": "npm run clean && npm run compile",
+    "clean": "rm -f lib/*",
+    "compile": "mkdir -p lib && babel src -d lib --optional runtime -s true",
+    "coverage": "istanbul cover _mocha -- --compilers js:babel/register test/*.js",
+    "coveralls": "npm run coverage && coveralls <coverage/lcov.info",
+    "lint": "eslint src test",
+    "test": "istanbul test mocha -- --compilers js:babel/register --reporter spec test/*.js",
+    "watch:src": "mkdir -p lib && babel src -d lib --optional runtime -s true -w"
+  },
+  "dependencies": {
+    "babel-runtime": "^5.8.20"
+  },
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "babel-eslint": "^4.0.10",
+    "chai": "^3.2.0",
+    "coveralls": "^2.11.4",
+    "eslint": "^1.2.0",
+    "eslint-config-standard": "^4.1.0",
+    "eslint-plugin-standard": "^1.2.0",
+    "istanbul": "^0.3.18",
+    "mocha": "^2.2.5"
+  }
+}
