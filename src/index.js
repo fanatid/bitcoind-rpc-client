@@ -140,6 +140,10 @@ export default class RpcClient extends Methods {
 
           try {
             let parsed = JSON.parse(data)
+            if (parsed.error) {
+              return reject(new Error(JSON.stringify(parsed.error)))
+            }
+
             resolve(parsed)
           } catch (err) {
             reject(new Error(
