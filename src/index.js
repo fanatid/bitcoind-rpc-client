@@ -3,7 +3,7 @@ import https from 'https'
 
 import Methods from './methods'
 import BatchInterface from './batch'
-import { asNodeCallaback } from './util'
+import { asCallback as asNodeCallaback } from 'promise-useful-utils'
 
 let methodId = 0
 

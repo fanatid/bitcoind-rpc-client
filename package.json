@@ -1,6 +1,6 @@
 {
   "name": "bitcoind-rpc-client",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Bitcoind RPC client",
   "keywords": [
     "bitcoin",
@@ -37,7 +37,8 @@
     "watch:src": "mkdir -p lib && babel src -d lib --optional runtime -s true -w"
   },
   "dependencies": {
-    "babel-runtime": "^5.8.20"
+    "babel-runtime": "^5.8.20",
+    "promise-useful-utils": "^0.2.0"
   },
   "devDependencies": {
     "babel": "^5.8.21",
