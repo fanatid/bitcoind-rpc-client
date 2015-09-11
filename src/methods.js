@@ -5,6 +5,7 @@ let methods = [
   'getBlockchainInfo',
   'getBlockCount',
   'getBlockHash',
+  'getBlockHeader',
   'getChainTips',
   'getDifficulty',
   'getMemPoolInfo',
@@ -34,17 +35,22 @@ let methods = [
 
   // == Network ==
   'addNode',
+  'clearBanned',
+  'disconnectNode',
   'getAddedNodeInfo',
   'getConnectionCount',
   'getNetTotals',
   'getNetworkInfo',
   'getPeerInfo',
+  'listBanned',
   'ping',
+  'setban',
 
   // == Rawtransactions ==
   'createRawTransaction',
   'decodeRawTransaction',
   'decodeScript',
+  'fundRawTransaction',
   'getRawTransaction',
   'sendRawTransaction',
   'signRawTransaction',
@@ -75,6 +81,7 @@ let methods = [
   'getWalletInfo',
   'importAddress',
   'importPrivKey',
+  'importPubKey',
   'importWallet',
   'keyPoolRefill',
   'listAccounts',
