@@ -147,7 +147,7 @@ export default class RpcClient extends Methods {
             resolve(parsed)
           } catch (err) {
             reject(new Error(
-              `${requestErrorMsg}Error Parsing JSON: ${err.message}`))
+              `${requestErrorMsg}Error Parsing JSON: ${err.message}, data: ${data}`))
           }
         })
       })

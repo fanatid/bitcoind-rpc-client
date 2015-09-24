@@ -46,7 +46,7 @@ let methods = [
   'ping',
   'setban',
 
-  // == Rawtransactions ==
+  // == Raw Transactions ==
   'createRawTransaction',
   'decodeRawTransaction',
   'decodeScript',
