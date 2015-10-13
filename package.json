@@ -1,6 +1,6 @@
 {
   "name": "bitcoind-rpc-client",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Bitcoind RPC client",
   "keywords": [
     "bitcoin",
@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "babel-runtime": "^5.8.20",
+    "make-concurrent": "^1.1.0",
     "promise-useful-utils": "^0.2.0"
   },
   "devDependencies": {

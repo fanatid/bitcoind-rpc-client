@@ -1,5 +1,6 @@
 import http from 'http'
 import https from 'https'
+import makeConcurrent from 'make-concurrent'
 
 import Methods from './methods'
 import BatchInterface from './batch'
@@ -21,14 +22,22 @@ export default class RpcClient extends Methods {
    * @param {boolean} [opts.ssl=false]
    * @param {boolean} [opts.sslStrict]
    * @param {string} [opts.sslCa]
+   * @param {number} [opts.concurrency=Infinity]
    */
   constructor (opts) {
     super()
 
-    this._opts = opts || {}
-    this._opts.host = this._opts.host || '127.0.0.1'
-    this._opts.port = this._opts.port || 8332
-    this._opts.ssl = this._opts.ssl || false
+    this._opts = Object.assign({
+      host: '127.0.0.1',
+      port: 8332,
+      ssl: false,
+      concurrency: Infinity
+    }, opts)
+
+    if (this._opts.concurrency !== Infinity) {
+      this._call = makeConcurrent(
+        ::this._call, {concurrency: this._opts.concurrency})
+    }
   }
 
   /**
