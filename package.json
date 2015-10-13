@@ -29,8 +29,8 @@
   "scripts": {
     "prepublish": "npm run clean && npm run compile",
     "clean": "rm -f lib/*",
-    "compile": "mkdir -p lib && babel src -d lib --optional runtime -s true",
-    "compile:watch": "mkdir -p lib && babel src -d lib --optional runtime -s true -w",
+    "compile": "mkdir -p lib && babel src -d lib",
+    "compile:watch": "mkdir -p lib && babel src -d lib -w",
     "coverage": "istanbul cover _mocha -- --compilers js:babel/register test/*.js",
     "coveralls": "npm run coverage && coveralls <coverage/lcov.info",
     "lint": "eslint src test",
