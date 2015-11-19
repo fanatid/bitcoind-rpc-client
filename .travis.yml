@@ -1,19 +1,25 @@
+sudo: false
 language: node_js
 node_js:
   - "0.10"
   - "0.12"
   - "4"
+  - "5"
 before_script:
   - cp test/config/bitcoind.json.travis test/config/bitcoind.json
   - mkdir -p ~/.bitcoin
   - cp test/config/bitcoin.conf.travis ~/.bitcoin/bitcoin.conf
-  - wget https://bitcoin.org/bin/bitcoin-core-0.11.0/bitcoin-0.11.0-linux64.tar.gz
-  - tar -xf bitcoin-0.11.0-linux64.tar.gz
-  - ./bitcoin-0.11.0/bin/bitcoind -testnet -server -daemon
+  - wget https://bitcoin.org/bin/bitcoin-core-0.11.2/bitcoin-0.11.2-linux64.tar.gz
+  - tar -xf bitcoin-0.11.2-linux64.tar.gz
+  - ./bitcoin-0.11.2/bin/bitcoind -testnet -server -daemon
   - sleep 15
-install:
-  - npm install
 env:
-  - TEST_SUITE=coveralls
-  - TEST_SUITE=lint
-script: "npm run $TEST_SUITE"
+  matrix:
+    - TEST_SUITE=test
+matrix:
+  include:
+    - node_js: "4"
+      env: TEST_SUITE=coveralls
+    - node_js: "4"
+      env: TEST_SUITE=lint
+script: npm run $TEST_SUITE

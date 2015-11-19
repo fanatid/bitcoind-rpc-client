@@ -1,10 +1,10 @@
 # bitcoind-rpc-client
 
+[![NPM Package](https://img.shields.io/npm/v/bitcoind-rpc-client.svg?style=flat-square)](https://www.npmjs.org/package/bitcoind-rpc-client)
 [![build status](https://img.shields.io/travis/fanatid/bitcoind-rpc-client.svg?branch=master&style=flat-square)](http://travis-ci.org/fanatid/bitcoind-rpc-client)
 [![Coverage Status](https://img.shields.io/coveralls/fanatid/bitcoind-rpc-client.svg?style=flat-square)](https://coveralls.io/r/fanatid/bitcoind-rpc-client)
 [![Dependency status](https://img.shields.io/david/fanatid/bitcoind-rpc-client.svg?style=flat-square)](https://david-dm.org/fanatid/bitcoind-rpc-client#info=dependencies)
 
-[![NPM](https://nodei.co/npm/bitcoind-rpc-client.png)](https://www.npmjs.com/package/bitcoind-rpc-client)
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 Bitcoind RPC client with blackjack and hookers.
