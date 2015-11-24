@@ -15,6 +15,7 @@
   "files": [
     "lib",
     "src",
+    "LICENSE",
     "README.md"
   ],
   "main": "./lib/index.js",
